@@ -23,7 +23,7 @@ function Comp () {
     })
 
     World.add(engine.current.world, [
-      Bodies.rectangle(cw / 2, ch / 2, 420, 70, { isStatic: true, render:{fillStyle: "none"} }),
+      Bodies.rectangle(cw / 2, ch / 2, 260, 130, { isStatic: true, render:{fillStyle: "none"} }),
       // Bodies.rectangle(10, ch / 2, 20, ch, { isStatic: true }),
       // Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
       // Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true })

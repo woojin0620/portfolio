@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Comp from './Comp'
-
-
+import { Button } from 'react-bootstrap';
 
 function Home (){
   const [xy,setXY]=useState({x:0,y:0})
@@ -11,6 +10,7 @@ function Home (){
             setXY({x:e.clientX,y:e.clientY});
         }
         document.onmousemove=(e)=>handleMouseMove(e);
+
   return(
     <div className='home'>
     <motion.div
@@ -27,11 +27,38 @@ function Home (){
       </div>
     <div className='title'>
       <h1 className='hmh1'>
-        기깔나는 제목 생각중
+          <span>E</span>
+          <span>X</span>
+          <span>P</span>
+          <span>E</span>
+          <span>R</span>
+          <span>I</span>
+          <span>E</span>
+          <span>N</span>
+          <span>C</span>
+          <span>E</span>
+          <br/>
+          <span>I</span>
+          <span>N</span>
+          <span>T</span>
+          <span>E</span>
+          <span>R</span>
+          <span>A</span>
+          <span>C</span>
+          <span>T</span>
+          <span>I</span>
+          <span>O</span>
+          <span>N</span>
       </h1>
+      
     <div className='buttons'>
-      <Link to='/about' className='lkabout'>about</Link>
-      <Link to='/projects' className='lkproject'>project</Link>
+      <Link to='/about' className='lkabout'><Button variant='light'>about</Button></Link>
+      
+      <Link to='/weather' className='lkweather'><Button variant='light'>weather</Button></Link>
+
+      <Link to='https://woojin0620.github.io/wordle/' className='lkwordle'><Button variant='light'>wordle</Button></Link>
+
+      <Link to='https://woojin0620.github.io/boogle/' className='lkboogle'><Button variant='light'>boogle</Button></Link>
     </div>
     </div>
     </motion.div>

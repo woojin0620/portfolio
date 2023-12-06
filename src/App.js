@@ -2,10 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import About from './About';
-import Projects from './Projects';
+import Weather from './Weather';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
                     
                     <Route path="/about" element={<About />} />
 
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/weather" element={<Weather />} />
                     
                 </Routes>
 

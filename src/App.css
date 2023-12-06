@@ -30,34 +30,173 @@ html, body {
           transform: translateX(-50%) translateY(-50%);
   font-family: "Montserrat";
   text-align: center;
+}
+
+.wttitle{
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 10%;
+  padding: 50px;
+}
+
+.lkabout, .lkweather, .lkwordle, .lkboogle{
+  padding: 10px;
   
 }
 
-.lkproject{
-  border: black solid 2px;
-  padding: 10px;
-  margin-left: 10px;
+.hmh1 {
+  font-weight: 1000;
 }
 
-
-.hmh1:hover{
-  animation: flash 1s infinite;
-}
-
-
-.lkabout{
-  border: black solid 2px;
-  padding: 10px;
+.hmh1 span:nth-child(1):hover{
+  color: red !important;
   
+  transition: 0.1s;
 }
 
-.about .lkhome{
+.hmh1 span:nth-child(2):hover{
+  color: rgb(255, 115, 0) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(3):hover{
+  color: yellow !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(4):hover{
+  color: green !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(5):hover{
+  color: blue !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(6):hover{
+  color: rgb(43, 0, 128) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(7):hover{
+  color: violet !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(8):hover{
+  color: red !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(9):hover{
+  color: rgb(255, 115, 0) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(10):hover{
+  color: yellow !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(11):hover{
+  color: green !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(12):hover{
+  color: blue !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(13):hover{
+  color: rgb(43, 0, 128) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(14):hover{
+  color: violet !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(15):hover{
+  color: red !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(16):hover{
+  color: rgb(255, 115, 0) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(17):hover{
+  color: yellow !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(18):hover{
+  color: green !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(19):hover{
+  color: blue !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(20):hover{
+  color: rgb(43, 0, 128) !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(21):hover{
+  color: violet !important;
+  
+  transition: 0.1s;
+}
+
+.hmh1 span:nth-child(22):hover{
+  color: red !important;
+  
+  transition: 0.1s;
+}
+
+
+.lkhome{
   position: absolute;
   left: 1%;
   top: 1%;
   font-family: "Montserrat";
   text-align: center;
-  border: black solid 2px;
   padding: 10px;
   
 }
@@ -66,3 +205,29 @@ html, body {
   animation: fadeInLeft 1s;
   
 }
+
+.Clouds{
+  background-image: url(https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif);
+  background-size: 100% 100%;
+}
+
+.Clear{
+  background-image: url(https://media.giphy.com/media/k3CeSrt9IZ6aorWCy1/giphy.gif);
+  background-size: 100% 100%;
+}
+
+.Rain, .Drizzle{
+  background-image: url(https://media.giphy.com/media/Mgq7EMQUrhcvC/giphy.gif);
+  background-size: 100% 100%;
+}
+
+.Mist, .Fog{
+  background-image: url(https://media.giphy.com/media/32074Ndlgidhu/giphy.gif);
+  background-size: 100% 100%;
+}
+
+.Snow{
+  background-image: url(https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif);
+  background-size: 100% 100%;
+}
+

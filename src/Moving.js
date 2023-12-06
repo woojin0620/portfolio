@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Engine, Render, World, Bodies, MouseConstraint, Body, Mouse } from "matter-js";
 
 
-function Flyballs() {
+function Moving() {
 
   const scene = useRef();
   let engine = useRef(Engine.create());
@@ -34,25 +34,14 @@ function Flyballs() {
     
     World.add(engine.current.world, [
   
-        Bodies.rectangle(cw / 2, ch / 2.02, 310, 20, {
+        Bodies.rectangle(cw / 2, ch / 2.02, 540, 270, {
           isStatic: true,
           render: {
             fillStyle: "none"
           }
         }),
         
-        Bodies.rectangle(cw / 2, (ch / 2) - 45, 210, 40, {
-          isStatic: true,
-          render: {
-            fillStyle: "none"
-          }
-        }),
-        Bodies.rectangle(cw / 2, (ch / 2) + 35, 500, 20, {
-          isStatic: true,
-          render: {
-            fillStyle: "none"
-          }
-        }),
+        
         // .title Bodies
 
         Bodies.rectangle(cw / 2, ch - 1, cw, 4, {
@@ -83,8 +72,10 @@ function Flyballs() {
         ]
     );
 
+    
+
     for (let i = 0; i < 230; i++) {
-      let radius = 2 + Math.random() * 30
+      let radius = 2 + Math.random() * 5
       World.add(engine.current.world, Bodies.circle(
         40 + Math.random() * cw - 80,
         40 + Math.random() * 100,
@@ -103,8 +94,8 @@ function Flyballs() {
     engine.current.world.gravity.y = 1
     
     if(inc > 8){
-      engine.current.world.gravity.x = Math.cos(inc / 70)
-      engine.current.world.gravity.y = Math.sin(inc / 70)
+      engine.current.world.gravity.x = 0
+      engine.current.world.gravity.y = 0
     }
     inc++
     idRAF = requestAnimationFrame(update.bind(this))
@@ -132,8 +123,26 @@ function Flyballs() {
     document.location.reload();
   }
 
+  const handleAddCircle = e => {
+    
+    const ball = Bodies.circle(
+      e.clientX,
+      e.clientY,
+      1,
+      {
+        mass: 1,
+        restitution: 1,
+        friction: 1,
+        render: {
+          fillStyle: "transparent"
+        }
+      })
+    World.add(engine.current.world, [ball])
+  
+}
+
   return (
-    <div>
+    <div onMouseMove={handleAddCircle}>
       
       <div ref={scene} style={{ width: '100%', height: '100%' }}>
         
@@ -143,4 +152,4 @@ function Flyballs() {
   )
 }
 
-export default Flyballs;
+export default Moving;
