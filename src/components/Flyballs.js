@@ -34,20 +34,26 @@ function Flyballs() {
     
     World.add(engine.current.world, [
   
-        Bodies.rectangle(cw / 2, ch / 2.02, 310, 20, {
+        Bodies.rectangle(cw / 2, ch / 2.1, 450, 20, {
           isStatic: true,
           render: {
             fillStyle: "none"
           }
         }),
         
-        Bodies.rectangle(cw / 2, (ch / 2) - 45, 210, 40, {
+        Bodies.rectangle(cw / 2, (ch / 2.12) - 45, 210, 40, {
           isStatic: true,
           render: {
             fillStyle: "none"
           }
         }),
-        Bodies.rectangle(cw / 2, (ch / 2) + 35, 500, 20, {
+        Bodies.rectangle(cw / 2, (ch / 2.1) + 35, 500, 20, {
+          isStatic: true,
+          render: {
+            fillStyle: "none"
+          }
+        }),
+        Bodies.rectangle(cw / 2, (ch / 2.1) + 75, 670, 20, {
           isStatic: true,
           render: {
             fillStyle: "none"
@@ -103,7 +109,7 @@ function Flyballs() {
     engine.current.world.gravity.y = 1
     
     if(inc > 8){
-      engine.current.world.gravity.x = Math.cos(inc / 70)
+      engine.current.world.gravity.x = Math.cos(inc / 50)
       engine.current.world.gravity.y = Math.sin(inc / 70)
     }
     inc++
@@ -127,6 +133,8 @@ function Flyballs() {
       render.textures = {}
     }
   }, [])
+
+  
 
   window.onresize = function(){
     document.location.reload();

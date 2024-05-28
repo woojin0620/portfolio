@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import Home from './Home';
-import About from './About';
-import Weather from './Weather';
+import './css/App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Weather from './pages/Weather';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

@@ -49,8 +49,8 @@ function Comp () {
     
       const ball = Bodies.circle(
         e.clientX,
-        e.clientY,
-        10 + Math.random() * 30,
+        e.clientY, //마우스 좌표에서 Body 생성
+        10 + Math.random() * 30, //생성되는 Body의 크기
         {
           mass: 10,
           restitution: 0.9,

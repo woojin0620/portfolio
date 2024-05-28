@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import Moving from './Moving';
+import Moving from '../components/Moving';
 
 
 function Weather() {
@@ -32,7 +32,7 @@ function Weather() {
    
 
   function handleGeoErr(err) {
-    console.log("geo err! " + err);
+    console.log("geo err! " + err); //위치 불러오기 실패
   }
 
   function requestCoords() {
@@ -44,9 +44,9 @@ function Weather() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        const name = data.name;
-        const temp = data.main.temp;
-        const weathers = data.weather[data.weather.length - 1];
+        const name = data.name; //도시
+        const temp = data.main.temp; //온도
+        const weathers = data.weather[data.weather.length - 1]; //날씨
         setTemp(temp);
         setWeather(weathers.main);
         setName(name);

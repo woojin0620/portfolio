@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
-import Flyballs from './Flyballs';
+import Flyballs from '../components/Flyballs';
 import { Button } from 'react-bootstrap';
 
 
@@ -22,8 +22,10 @@ function About() {
         <Link to='/' className='lkhome'><Button variant='light'>뒤로</Button></Link>
         <div className='title'> 
             <h1 className='abh1'>반갑습니다!</h1>
-            <p>interactive한 웹을 만드는것을 좋아합니다</p>
-            <p>다양한 인터랙션을 사용하여 유저의 흥미를 끌어내는것이 목표입니다.</p>
+            <p><span>Matter.js</span>를 이용한 interaction을 적용한 react 페이지 입니다.</p>
+            <p>Open Weather API를 활용한 프로젝트를 제작하던중 <span>Matter.js</span>라는 </p>
+            <p>재미있어 보이는 라이브러리를 발견하여 시각적 즐거움을 위해 프로젝트에 적용해보았습니다.</p>
+            
         </div>
         
         </motion.div>
