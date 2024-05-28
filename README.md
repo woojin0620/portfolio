@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Hello World! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# https://woojin0620.github.io/portfolio
 
-## Available Scripts
+matter.js를 이용하여 물리엔진을 적용한 포트폴리오 사이트 입니다.
 
-In the project directory, you can run:
+메인페이지의 버튼들에 물리엔진을 적용하여 유저의 흥미를 이끌어내고자 하며 제작하였고, 'what is this?(about)' 페이지에서는 백그라운드에 역동적인 'circle'들을 배치해서 웹페이지가 살아있는듯한 느낌을 표현하고자 했습니다.
 
-### `npm start`
+## Weather
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+OpenWeather API를 이용하여 만든 미니프로젝트입니다. 접속시 위치확인 권한을 허용하면, 위도,경도를 기반으로 현재있는 도시의 기온과 날씨 데이터를 불러와 화면에 출력합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+웹페이지가 살아있는듯한 느낌을 표현하고자 백그라운드에 각 날씨에 맞는 움직이는 이미지를 배치하였고 물리엔진이 적용된 'circle'들을 배치하였지만, 정보전달이 목적인 페이지라서 역동적이지 않고 차분하게 유저와 상호작용하도록 배치했습니다.  
 
-### `npm test`
+## Wordle(clone)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+단어맞추기 게임인 'Wordle'을 클론코딩한 페이지입니다. 반응형으로 제작하여 모바일로도 플레이가 가능합니다.
 
-### `npm run build`
+페이지의 생동감을 위하여 타이틀에 애니메이션을 추가하였으며, 게임방법과 알림의 내용을 한글로 출력하도록 만들었습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Boogle(Google clone)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+'Google'의 메인페이지를 클론코딩한 페이지입니다. 검색창에 입력시 'Google'의 검색결과로 이동합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+하지만 'Boogle'은 유저가 편하게 검색을하게 허락하진 않습니다..
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
