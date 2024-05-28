@@ -17,6 +17,7 @@ function Home (){
   const weather = useRef();
   const wordle = useRef();
   const boogle = useRef();
+  const github = useRef();
   const mouseConstraint = MouseConstraint.create(engine.current);
   let idRAF = null;
 
@@ -63,6 +64,9 @@ function Home (){
     const bgElement = boogle.current;
     const bgCircle = bgElement.getBoundingClientRect();
     const bgRadius = bgCircle.width;
+    const ghElement = github.current;
+    const ghCircle = ghElement.getBoundingClientRect();
+    const ghRadius = ghCircle.width;
     
 
     const aboutBody = Bodies.circle(
@@ -74,7 +78,7 @@ function Home (){
         restitution : 1, //탄력값
         isStatic: false,
         render: {
-          visible: true,
+          visible: false,
           
         }
       }
@@ -122,8 +126,27 @@ function Home (){
       }
     );
 
+    const githubBody = Bodies.circle(
+      window.innerWidth / 1,
+      window.innerHeight / 4,
+      
+      ghRadius,
+      {
+        restitution : 1,
+        isStatic: false,
+        render: {
+          visible: true,
+          sprite:{
+          texture: `${process.env.PUBLIC_URL}/githublogo.png`, // public 디렉터리의 PNG 이미지 경로
+            xScale: (ghCircle.width / (9 * ghRadius)), // 이미지의 x축 스케일 조정
+            yScale: (ghCircle.height / (9 * ghRadius)) // 이미지의 y축 스케일 조정
+          }
+        }
+      }
+    );
+
     
-  World.add(engine.current.world, [aboutBody, weatherBody, wordleBody, boogleBody]);
+  World.add(engine.current.world, [aboutBody, weatherBody, wordleBody, boogleBody, githubBody]);
   
   for (let i = 0; i < 230; i++) {
     let radius = 2 + Math.random() * 20
@@ -151,7 +174,8 @@ Events.on(engine.current, 'afterUpdate', () => {
     wdElement.style.top = `${wordleBody.position.y - wdRadius}px`;
     bgElement.style.left = `${boogleBody.position.x -bgRadius}px`;
     bgElement.style.top = `${boogleBody.position.y -bgRadius}px`;
-    
+    ghElement.style.left = `${githubBody.position.x -ghRadius}px`;
+    ghElement.style.top = `${githubBody.position.y -ghRadius}px`;
 });
 
 
@@ -218,13 +242,15 @@ idRAF = requestAnimationFrame(update.bind(this))
     
     </div>
     <div className='buttons'>
-      <Link to='/about'><button ref={about} className='lkabout'>about</button></Link>
+      <Link to='/about'><button ref={about} className='lkabout'>what is this?</button></Link>
       
       <Link to='/weather'><button ref={weather} className='lkweather'>weather</button></Link>
 
       <Link to='https://woojin0620.github.io/wordle/'><button ref={wordle} className='lkwordle'>wordle</button></Link>
 
       <Link to='https://woojin0620.github.io/boogle/'><button ref={boogle} className='lkboogle'>boogle</button></Link>
+
+      <Link to='https://github.com/woojin0620/'><button ref={github} className='lkgithub'></button></Link>
     </div>
     </div>
     </motion.div>

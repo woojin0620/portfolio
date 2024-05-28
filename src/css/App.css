@@ -57,6 +57,23 @@ html, body {
   border-color: transparent;
 }
 
+.lkgithub{
+  
+  position: absolute;
+  width: 200px;
+  height: 206px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.lkgithub:hover{
+  background: linear-gradient(
+    rgba(76, 76, 76, 0.579),
+    rgba(115, 115, 115, 0.699)
+  );
+}
+
 .lkabout{
   background-color: rgb(33, 177, 254);
 }
