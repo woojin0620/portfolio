@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 
 
 function Home (){
+
+  
+
   const [xy,setXY]=useState({x:0,y:0})
       const handleMouseMove=(e)=>{
             setXY({x:e.clientX,y:e.clientY});
@@ -19,6 +22,7 @@ function Home (){
   const boogle = useRef();
   const github = useRef();
   const mouseConstraint = MouseConstraint.create(engine.current);
+  
   let idRAF = null;
 
   useEffect(() => {
@@ -188,8 +192,6 @@ idRAF = requestAnimationFrame(update.bind(this))
     Engine.run(engine.current)
     Render.run(render)
 
-
-
     return () => {
       Render.stop(render)
       World.clear(engine.current.world)
@@ -202,7 +204,6 @@ idRAF = requestAnimationFrame(update.bind(this))
     };
   }, []);
 
-    
     
   
   window.onresize = function(){

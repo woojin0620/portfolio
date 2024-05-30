@@ -7,6 +7,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+
+    const handleTouchStart = (event) => {
+        
+        const touch = event.touches[0];
+        const touchEvent = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+          screenX: touch.screenX,
+          screenY: touch.screenY,
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+  
+        touch.target.dispatchEvent(touchEvent);
+      };
+  
+      window.addEventListener('touchstart', handleTouchStart);
+    // 터치를 클릭으로 인식하도록 변경
+
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <div className="App">
