@@ -33,16 +33,6 @@ function Moving() {
     engine.current.world.gravity.y = 0;
     
     World.add(engine.current.world, [
-  
-        Bodies.rectangle(cw / 2, ch / 2.02, 540, 270, {
-          isStatic: true,
-          render: {
-            fillStyle: "none"
-          }
-        }),
-        
-        
-        // .title Bodies
 
         Bodies.rectangle(cw / 2, ch - 1, cw, 4, {
           isStatic: true,
@@ -77,8 +67,8 @@ function Moving() {
     for (let i = 0; i < 230; i++) {
       let radius = 2 + Math.random() * 5
       World.add(engine.current.world, Bodies.circle(
-        40 + Math.random() * cw - 80,
-        40 + Math.random() * 100,
+        20 + Math.random() * cw,
+        5 + Math.random() * ch,
         radius, {
           render: {
             fillStyle: ["#4285F4", "#EA4335", "#FBBC05", "#34A853"][Math.round(Math.random() * 3)]
@@ -91,7 +81,7 @@ function Moving() {
       
     let inc = 0
     setTimeout(function update() {
-    engine.current.world.gravity.y = 1
+    engine.current.world.gravity.y = 0.5
     
     if(inc > 8){
       engine.current.world.gravity.x = 0

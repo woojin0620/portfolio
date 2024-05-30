@@ -8,7 +8,7 @@ function Flyballs() {
   let engine = useRef(Engine.create());
   let idRAF = null;
   let mouseConstraint = MouseConstraint.create(engine.current);
-  
+  const mobileDevice = document.body.style.width < 500
 
   useEffect(() => {
     const cw = document.body.clientWidth
@@ -32,35 +32,41 @@ function Flyballs() {
     engine.current.world.gravity.x = 0;
     engine.current.world.gravity.y = 0;
     
+    if(document.body.style.width > 500){
+
     World.add(engine.current.world, [
   
         Bodies.rectangle(cw / 2, ch / 2.1, 450, 20, {
           isStatic: true,
           render: {
-            fillStyle: "none"
+            fillStyle: "red"
           }
         }),
         
         Bodies.rectangle(cw / 2, (ch / 2.12) - 45, 210, 40, {
           isStatic: true,
           render: {
-            fillStyle: "none"
+            fillStyle: "red"
           }
         }),
         Bodies.rectangle(cw / 2, (ch / 2.1) + 35, 500, 20, {
           isStatic: true,
           render: {
-            fillStyle: "none"
+            fillStyle: "red"
           }
         }),
         Bodies.rectangle(cw / 2, (ch / 2.1) + 75, 670, 20, {
           isStatic: true,
           render: {
-            fillStyle: "none"
+            fillStyle: "red"
           }
         }),
         // .title Bodies
+      ]
+    )
+  }
 
+  World.add(engine.current.world, [
         Bodies.rectangle(cw / 2, ch - 1, cw, 4, {
           isStatic: true,
           render: {
@@ -88,7 +94,7 @@ function Flyballs() {
 //  테두리 Bodies
         ]
     );
-
+    
     for (let i = 0; i < 230; i++) {
       let radius = 2 + Math.random() * 30
       World.add(engine.current.world, Bodies.circle(
@@ -101,7 +107,13 @@ function Flyballs() {
       
         }
       ))
+      if(mobileDevice){
+        radius = 2 + Math.random() *15;
       }
+      }
+
+      
+
 
       
     let inc = 0

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Engine, Render, Bodies, World, Events, MouseConstraint, Body } from 'matter-js'
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, px } from 'framer-motion';
 
 
 function Home (){
@@ -130,9 +130,17 @@ function Home (){
       }
     );
 
+    let githubBodyX = window.innerWidth / 1;
+    let githubBodyY = window.innerHeight / 4;
+
+    if (parseInt(window.getComputedStyle(document.body).width) < 500) {
+      githubBodyX = window.innerWidth / 3;
+  }
+    //가로 500px 미만일시 초기생성위치 수정
+
     const githubBody = Bodies.circle(
-      window.innerWidth / 1,
-      window.innerHeight / 4,
+      githubBodyX,
+      githubBodyY,
       
       ghRadius,
       {
