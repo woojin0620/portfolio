@@ -27,6 +27,14 @@ function App() {
       window.addEventListener('touchstart', handleTouchStart);
     // 터치를 클릭으로 인식하도록 변경
 
+    window.onresize = function(){
+        document.location.reload(); //창크기 변경시 페이지 새로고침
+      };
+
+      window.addEventListener('orientationchange', function() {
+        document.location.reload(); //화면 회전시 페이지 새로고침
+    });
+
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <div className="App">

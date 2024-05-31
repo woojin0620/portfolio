@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Engine, Render, Bodies, World, Events, MouseConstraint, Body } from 'matter-js'
 import { Link } from 'react-router-dom';
-import { motion, px } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 function Home (){
@@ -22,7 +22,8 @@ function Home (){
   const boogle = useRef();
   const github = useRef();
   const mouseConstraint = MouseConstraint.create(engine.current);
-  
+  const mobileDevice = parseInt(window.getComputedStyle(document.body).width) < 768
+
   let idRAF = null;
 
   useEffect(() => {
@@ -133,10 +134,10 @@ function Home (){
     let githubBodyX = window.innerWidth / 1;
     let githubBodyY = window.innerHeight / 4;
 
-    if (parseInt(window.getComputedStyle(document.body).width) < 500) {
+    if (parseInt(window.getComputedStyle(document.body).width) < 1200){
       githubBodyX = window.innerWidth / 3;
   }
-    //가로 500px 미만일시 초기생성위치 수정
+    //가로 1200px 미만일시 초기생성위치 수정
 
     const githubBody = Bodies.circle(
       githubBodyX,
@@ -162,6 +163,9 @@ function Home (){
   
   for (let i = 0; i < 230; i++) {
     let radius = 2 + Math.random() * 20
+    if(mobileDevice){
+      radius = 2+ Math.random() * 15
+    }
     World.add(engine.current.world, Bodies.circle(
       40 + Math.random() * cw - 80,
       40 + Math.random() * 100,
@@ -177,18 +181,18 @@ function Home (){
 
 // Matter.js 이벤트 리스너 설정
 Events.on(engine.current, 'afterUpdate', () => {
-    // Matter.js 바디 위치에 따라 버튼 위치 업데이트
-    abElement.style.left = `${aboutBody.position.x - abRadius}px`;
-    abElement.style.top = `${aboutBody.position.y - abRadius}px`;
-    wtElement.style.left = `${weatherBody.position.x - wtRadius}px`;
-    wtElement.style.top = `${weatherBody.position.y - wtRadius}px`;
-    wdElement.style.left = `${wordleBody.position.x - wdRadius}px`;
-    wdElement.style.top = `${wordleBody.position.y - wdRadius}px`;
-    bgElement.style.left = `${boogleBody.position.x -bgRadius}px`;
-    bgElement.style.top = `${boogleBody.position.y -bgRadius}px`;
-    ghElement.style.left = `${githubBody.position.x -ghRadius}px`;
-    ghElement.style.top = `${githubBody.position.y -ghRadius}px`;
-});
+    
+    function setElementPosition(element, body, radius) {
+      element.style.left = `${body.position.x - radius}px`;
+      element.style.top = `${body.position.y - radius}px`;
+  }
+  
+  setElementPosition(abElement, aboutBody, abRadius);
+  setElementPosition(wtElement, weatherBody, wtRadius);
+  setElementPosition(wdElement, wordleBody, wdRadius);
+  setElementPosition(bgElement, boogleBody, bgRadius);
+  setElementPosition(ghElement, githubBody, ghRadius);
+}); // Matter.js 바디 위치에 따라 버튼 위치 업데이트
 
 
 setTimeout(function update() {
@@ -212,11 +216,6 @@ idRAF = requestAnimationFrame(update.bind(this))
     };
   }, []);
 
-    
-  
-  window.onresize = function(){
-    document.location.reload(); //창크기 변경시 페이지 새로고침
-  }
 
   return(
     <div className='home'>

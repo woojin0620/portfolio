@@ -13,7 +13,7 @@ function About() {
     let engine = useRef(Engine.create());
     let idRAF = null;
     let mouseConstraint = MouseConstraint.create(engine.current);
-    const mobileDevice = parseInt(window.getComputedStyle(document.body).width) < 500;
+    const mobileDevice = parseInt(window.getComputedStyle(document.body).width) < 768
   
     useEffect(() => {
       const cw = document.body.clientWidth
@@ -117,12 +117,6 @@ function About() {
         render.textures = {}
       }
     }, [])
-  
-    
-  
-    window.onresize = function(){
-      document.location.reload();
-    }
 
     return (
         <div className='about'>

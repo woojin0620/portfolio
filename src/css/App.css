@@ -205,27 +205,27 @@ html, body {
 }
 
 .Clouds{
-  background-image: url(https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif);
+  background-image: url('../img/clouds.gif');
   background-size: 100% 100%;
 }
 
 .Clear{
-  background-image: url(https://media.giphy.com/media/k3CeSrt9IZ6aorWCy1/giphy.gif);
+  background-image: url('../img/clear.gif');
   background-size: 100% 100%;
 }
 
 .Rain, .Drizzle{
-  background-image: url(https://media.giphy.com/media/Mgq7EMQUrhcvC/giphy.gif);
+  background-image: url('../img/rain.gif');
   background-size: 100% 100%;
 }
 
 .Mist, .Fog{
-  background-image: url(https://media.giphy.com/media/32074Ndlgidhu/giphy.gif);
+  background-image: url('../img/mist.gif');
   background-size: 100% 100%;
 }
 
 .Snow{
-  background-image: url(https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif);
+  background-image: url('../img/snow.gif');
   background-size: 100% 100%;
 }
 
@@ -254,5 +254,9 @@ html, body {
     border-radius: 10%;
     padding: 50px;
     font-size: 13px;
+  }
+
+  .pointer{
+    display: none;
   }
 }
